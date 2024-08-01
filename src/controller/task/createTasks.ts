@@ -7,12 +7,12 @@ export const createTaskController = async (req: Request, res: Response) => {
         
         console.log('the task',req.body);
         
-        if (!req.user) {
-            return res.status(401).json({
-                success: false,
-                message: 'The user is not authenticated!',
-            });
-        }
+        // if (!req.user) {
+        //     return res.status(401).json({
+        //         success: false,
+        //         message: 'The user is not authenticated!',
+        //     });
+        // }
 
         
         const task = await createTask(req.body);
