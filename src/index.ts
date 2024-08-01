@@ -19,6 +19,7 @@ app.use(cookieParser());
 // CORS configuration
 const corsOptions = {
   origin:'https://task-management-client.vercel.app',
+  // origin:'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
   credentials: true,
 };

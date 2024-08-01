@@ -1,12 +1,13 @@
+import { Router } from 'express';
 import { jwtMiddleware } from '../utils/jwtMiddleware/jwtMiddleWare';
 import { getUserController } from '../controller/auth/getUser';
 import { loginController } from '../controller/auth/loginUser';
 import { signupController } from '../controller/auth/signupUser';
-import { Router } from 'express';
 import { createTaskController } from '../controller/task/createTasks';
 import { deleteTaskController } from '../controller/task/deleteTask';
 import { getTaskController } from '../controller/task/getTasks';
 import { updateController } from '../controller/task/updateTask';
+import { logoutController } from '../controller/auth/logout';
 
 const router = Router()
 
@@ -30,5 +31,9 @@ router.route('/getTasks').get(jwtMiddleware,getTaskController)
 
 //update task------------------------------
 router.route('/updateTask').patch(jwtMiddleware,updateController)
+
+// logout user ------------------------------
+router.route('/logout').patch(logoutController)
+
 
 export default router;
