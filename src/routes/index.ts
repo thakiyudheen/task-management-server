@@ -21,19 +21,19 @@ router.route('/login').post(loginController)
 router.route('/getUser').get(jwtMiddleware,getUserController)
 
 //create task------------------------------
-router.route('/createTask').post(jwtMiddleware,createTaskController)
+router.route('/createTask').post(createTaskController)
 
 //create task------------------------------
-router.route('/deleteTask').delete(jwtMiddleware,deleteTaskController)
+router.route('/deleteTask').delete(deleteTaskController)
 
 //create task------------------------------
 router.route('/getTasks').get(jwtMiddleware,getTaskController)
 
 //update task------------------------------
-router.route('/updateTask').patch(jwtMiddleware,updateController)
+router.route('/updateTask').patch(updateController)
 
 // logout user ------------------------------
-router.route('/logout').patch(logoutController)
+router.route('/logout').delete(logoutController)
 
 
 export default router;
